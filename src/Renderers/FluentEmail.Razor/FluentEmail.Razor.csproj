@@ -15,16 +15,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-    <PackageReference Include="RazorLight" Version="2.0.0-alpha3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RazorLight\src\RazorLight\RazorLight.csproj" />
     <ProjectReference Include="..\..\FluentEmail.Core\FluentEmail.Core.csproj" />
   </ItemGroup>
-
-  <Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
-  </Target>
 
 </Project>

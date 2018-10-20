@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\RazorLight\src\RazorLight\RazorLight.csproj" />
     <ProjectReference Include="..\..\src\FluentEmail.Core\FluentEmail.Core.csproj" />
     <ProjectReference Include="..\..\src\Renderers\FluentEmail.Razor\FluentEmail.Razor.csproj" />
   </ItemGroup>

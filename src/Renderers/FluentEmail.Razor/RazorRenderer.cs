@@ -10,9 +10,9 @@ namespace FluentEmail.Razor
         public async Task<string> ParseAsync<T>(string template, T model, bool isHtml = true)
         {
             var project = new InMemoryRazorLightProject();
-            var engine = new EngineFactory().Create(project);
+            var engine = new RazorLightEngineBuilder().UseProject(project).Build();
             
-            return await engine.CompileRenderAsync<T>(Guid.NewGuid().ToString(), template, model);
+            return await engine.CompileRenderStringAsync<T>(Guid.NewGuid().ToString(), template, model);
         }
 
         string ITemplateRenderer.Parse<T>(string template, T model, bool isHtml)

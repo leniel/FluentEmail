@@ -22,9 +22,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\FluentEmail.Core\FluentEmail.Core.csproj" />
   </ItemGroup>
-
-  <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
-  </Target>
-
+  
 </Project>
