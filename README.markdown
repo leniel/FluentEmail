@@ -96,6 +96,18 @@ var email = new Email("bob@hotmail.com")
 		TypeFromYourEmbeddedAssembly.GetType().GetTypeInfo().Assembly);
 ```
 
+or
+
+```csharp
+var assembly = Assembly.Load("YourCompany.YouProjectClassLibrary");
+
+var email = new Email("bob@hotmail.com")
+	.To("benwholikesbeer@twitter.com")
+	.Subject("Hey cool name!")
+	.UsingTemplateFromEmbedded("YourCompany.YouProjectClassLibrary.template-name.cshtml", 
+		new { Name = "Bob" }, assembly);
+```
+
 **More Info**
 
 <a href="http://lukencode.com/2018/07/01/send-email-in-dotnet-core-with-fluent-email/">Sending email in .NET Core with FluentEmail</a>
